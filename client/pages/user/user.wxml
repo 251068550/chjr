@@ -1,0 +1,10 @@
+<view class='user-content'>
+  <image mode="aspectFill" src="{{logo}}" class='logo'></image>
+  <text>{{name}}</text>
+</view>
+<view class='list-item'>
+  <button bindtap='handleJmup'><image src='https://s1.ax1x.com/2018/03/20/97Cl7Q.png'></image>关于我们</button>
+</view>
+<view class='list-item'>
+  <button open-type='contact'><image src="https://s1.ax1x.com/2018/03/20/97CDAJ.png"></image>联系客服</button>
+</view>

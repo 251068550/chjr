@@ -1,0 +1,146 @@
+<view class='title'>
+  <text>今日实时库存</text>
+  <!-- <view bindtap='openFilter' class='filter' style='background-image:url(https://s1.ax1x.com/2018/03/18/9owpdS.png);'></view> -->
+</view>
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row thead">
+    <text bindtap='handleOrder' class="flex-cell flex-row {{order_type=='je'?order_dirc==1?'active1':'active2':''}}" data-type="je">金额</text>
+    <text bindtap='handleOrder' class="flex-cell flex-row {{order_type=='cns'?order_dirc==1?'active1':'active2':''}}" data-type="cns">办公物品</text>
+    <text bindtap='handleOrder' class="flex-cell flex-row {{order_type=='dqr'?order_dirc==1?'active1':'active2':''}}" data-type="dqr">买入日</text>
+    <text bindtap='handleOrder' class="flex-cell flex-row {{order_type=='sl'?order_dirc==1?'active1':'active2':''}}" data-type="sl">数量</text>
+    <text class="flex-cell flex-row nobg">操作</text>
+  </view>
+  <view class="flex-row flex-cell" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+    <text class="flex-cell flex-row">{{item.money}}</text>
+    <text class="flex-cell flex-row">{{item.accept}}</text>
+    <text class="flex-cell flex-row">{{item.end_date}}</text>
+    <text class="flex-cell flex-row">{{item.quantity}}</text>
+    <text class="flex-cell flex-row more" bindtap='handlerSlide' data-index='{{index}}'>详情</text>
+  </view>
+</view>
+
+<view class="dlg {{open ? 'dlg-active' : ''}}">
+  <view class="dlg-mask" bindtap='handlerSlide'></view>
+  <view class="dlg-content">
+    <view class='card'>
+      <view class='card-hd'>
+        <view class='card-tit' style="background-image: url(../../images/bank.png)">{{list[index].accept}}</view>
+        <view class='info'>
+          <text>金额<text class='unit'>(万元)</text></text>
+          <text>到期日<text class='unit'>(剩{{last_day}}天)</text></text>
+          <text>{{list[index].money}}</text>
+          <text>{{list[index].end_date}}</text>
+        </view>
+      </view>
+      <view class='card-bd'>
+        <view class='num-info'>
+          <text>共<text class='num'>{{list[index].quantity}}</text>张</text>
+        </view>
+        <view class='tip'>
+          备注：无备注
+        </view>
+        <view class='img-content'>
+          <view class='image' bindtap='previewImage' style="background-image:url({{item}})" wx:for="{{list[index].imgs}}" wx:for-item="item" wx:for-index="i" data-i='{{i}}' />
+        </view>
+
+      </view>
+    </view>
+    <!-- <view class='intro'>请填写预定信息，客服稍后与您联系</view>
+
+    <form bindsubmit="formSubmit" class='fm-book'>
+      <view class="section">
+        <label>手机号码</label>|
+        <input name='phone' placeholder="请输入手机号码" />
+      </view>
+      <input style="display:none;" name="stock_id" value="{{list[index].id}}"></input>
+      <view class="section">
+        <label>预定数量</label>|
+        <input name='num' placeholder="张"/>
+      </view>
+      <button formType="submit">确认</button>
+    </form> -->
+  </view>
+</view>
+
+<view class="dlg {{openFilter ? 'dlg-active' : ''}}">
+  <view class="dlg-mask" bindtap='openFilter'></view>
+  <view class="dlg-content filter-content">
+    <view class='tit'>筛选条件</view>
+    <view class='section'>
+      <label class='tit'>金额</label>
+      <radio-group bindchange="radioCheckedChange_je">
+        <radio id="s1g1" value="1" hidden/>
+        <label class="{{radio_je==1?'active':''}}" for="s1g1">10万以内</label>
+        <radio id="s1g2" value="2" hidden/>
+        <label class="{{radio_je==2?'active':''}}" for="s1g2">10万-50万</label>
+        <radio id="s1g3" value="3" hidden/>
+        <label class="{{radio_je==3?'active':''}}" for="s1g3">50万-100万</label>
+        <radio id="s1g4" value="4" hidden/>
+        <label class="{{radio_je==4?'active':''}}" for="s1g4">100万以上</label>
+      </radio-group>
+    </view>
+    <view class='section'>
+      <label class='tit'>银行</label>
+      <radio-group bindchange="radioCheckedChange_yh">
+        <radio id="s2g1" value="1" hidden/>
+        <label class="{{radio_yh==1?'active':''}}" for="s2g1">国股</label>
+        <radio id="s2g2" value="2" hidden/>
+        <label class="{{radio_yh==2?'active':''}}" for="s2g2">城商</label>
+        <radio id="s2g3" value="3" hidden/>
+        <label class="{{radio_yh==3?'active':''}}" for="s2g3">山农</label>
+        <radio id="s2g4" value="4" hidden/>
+        <label class="{{radio_yh==4?'active':''}}" for="s2g4">财务公司</label>
+        <radio id="s2g5" value="5" hidden/>
+        <label class="{{radio_yh==5?'active':''}}" for="s2g5">商业</label>
+      </radio-group>
+    </view>
+    <view class='section'>
+      <label class='tit'>期限</label>
+      <radio-group bindchange="radioCheckedChange_qx">
+        <radio id="s3g1" value="1" hidden/>
+        <label class="{{radio_qx==1?'active':''}}" for="s3g1">小于90天</label>
+        <radio id="s3g2" value="2" hidden/>
+        <label class="{{radio_qx==2?'active':''}}" for="s3g2">90天-160天</label>
+        <radio id="s3g3" value="3" hidden/>
+        <label class="{{radio_qx==3?'active':''}}" for="s3g3">161天-185天</label>
+        <radio id="s3g4" value="4" hidden/>
+        <label class="{{radio_qx==4?'active':''}}" for="s3g4">186天-350天</label>
+        <radio id="s3g5" value="5" hidden/>
+        <label class="{{radio_qx==5?'active':''}}" for="s3g5">大于350天</label>
+      </radio-group>
+
+    </view>
+    <view class='opt-btn'>
+      <button bindtap='handRadioReset'>重置</button>
+      <button bindtap='handRadioChange'>确认</button>
+    </view>
+
+  </view>
+</view>
+
+<view class='about' bindtap='openConnect'>关于我们</view>
+<view class="dlg {{openConnect ? 'dlg-active' : ''}}">
+  <view class="dlg-mask" bindtap='openConnect'></view>
+  <view class="dlg-content connect-content">
+    <view class='tit'>业务范围</view>
+    <view class='txt'>{{name}}</view>
+    <view class='tit'>公司地址</view>
+    <view class='txt'>{{address}}</view>
+    <view class='connect-info'>
+      <text>您可以选择电话或者“在线客服”与我们联系，我们和荣幸为您提供相关服务</text>
+      <view class='btn' bindtap="calling">
+        <view>
+          <image mode="aspectFit" src='https://s1.ax1x.com/2018/03/25/9qWgiQ.png'></image>
+        </view>
+        <text>{{phone}}</text>
+      </view>
+      <button class='btn' open-type='contact'>
+        <view>
+          <image mode="aspectFit" src='https://s1.ax1x.com/2018/03/25/9qW6Ig.png'></image>
+        </view>
+        <text>在线客服</text>
+      </button>
+
+    </view>
+  </view>
+</view>

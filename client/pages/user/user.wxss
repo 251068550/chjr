@@ -1,0 +1,62 @@
+/* pages/stock/stock.wxss */
+
+page {
+  background-color: #efefef;
+}
+
+.user-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #ee000a, #bc0004);
+  height: 400rpx;
+  justify-content: center;
+}
+
+.user-content image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-content text {
+  color: #f5f5f5;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.list-item {
+  color: #333;
+  border-bottom: 1rpx solid #ccc;
+  font-size: 30rpx;
+  padding: 20rpx;
+  background: url(https://s1.ax1x.com/2018/03/20/9TD9N8.png) right center no-repeat #fff;
+  background-size: 30rpx 30rpx;
+}
+
+.list-item button {
+  background: none;
+  border: none;
+  font-size: 30rpx;
+  color: #333;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-item button::after {
+  content: none;
+}
+.list-item image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.logo{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}

@@ -1,0 +1,32 @@
+page {
+  background-color: #efefef;
+}
+
+.item {
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1rpx solid #ddd;
+  margin: 10rpx 0;
+  display: flex;
+  background-color: white;
+}
+
+.info {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 400rpx;
+}
+.date {
+  display: block;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+  color: #666;
+}
+
+.img {
+  width: 220rpx;
+  height: 160rpx;
+  margin-right: 50rpx;
+}

@@ -1,0 +1,19 @@
+<text class="tip">提醒：带零头、回头、质押、重复、上下不一、超期、不足询单</text>
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row thead">
+    <text class="flex-cell flex-row">保修期</text>
+    <text class="flex-cell flex-row">金额(万)</text>
+    <text class="flex-cell flex-row">-</text>
+    <text class="flex-cell flex-row">-</text>
+    <text class="flex-cell flex-row">-</text>
+  </view>
+  <view wx:for="{{list}}" wx:for-item="item">
+    <view class="flex-row flex-cell">
+      <text class="flex-cell flex-row">{{item.term}}</text>
+      <text class="flex-cell flex-row">{{item.money}}</text>
+      <text class="flex-cell flex-row">{{item.guogu}}</text>
+      <text class="flex-cell flex-row">{{item.chengshang}}</text>
+      <text class="flex-cell flex-row">{{item.nongshang}}</text>
+    </view>
+  </view>
+</view>

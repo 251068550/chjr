@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/stock/stock",
+    "pages/quotation/quotation",
+    "pages/gg/gg",
+    "pages/user/user",
+    "pages/webview/webview"
+  ],
+  "window": {
+    "backgroundColor": "#CCC",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "呈辉报价",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#1afa29",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "text": "库存",
+        "pagePath": "pages/stock/stock",
+        "iconPath": "images/home1.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "text": "报价单",
+        "pagePath": "pages/quotation/quotation",
+        "iconPath": "images/list1.png",
+        "selectedIconPath": "images/list.png"
+      },
+      {
+        "text": "公告",
+        "pagePath": "pages/gg/gg",
+        "iconPath": "images/gg1.png",
+        "selectedIconPath": "images/gg.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/user/user",
+        "iconPath": "images/user1.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  }
+}

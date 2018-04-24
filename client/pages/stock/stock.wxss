@@ -1,0 +1,354 @@
+/* pages/stock/stock.wxss */
+
+page {
+  background-color: #efefef;
+}
+
+.title {
+  border-left: 5rpx solid #d7242a;
+  font-size: 30rpx;
+  line-height: 3;
+  text-indent: 20rpx;
+  background-color: #fff;
+}
+
+.filter {
+  width: 40rpx;
+  height: 40rpx;
+  background-size: contain;
+  float: right;
+  margin: 30rpx 55rpx 0 0;
+}
+
+#panel {
+  background: #fff;
+  margin-top: 10rpx;
+}
+
+#panel text, #panel icon {
+  font-size: 24rpx;
+  line-height: 50rpx;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #ddd;
+}
+
+#panel icon {
+  padding: 20rpx 0;
+}
+
+#panel .thead .flex-row {
+  background-image: url('https://s1.ax1x.com/2018/03/18/9owFRs.png');
+  background-repeat: no-repeat;
+  background-size: 25rpx 25rpx;
+  background-position: 110rpx center;
+}
+
+#panel .thead .active1 {
+  background-image: url('https://s1.ax1x.com/2018/03/18/9odOxI.png');
+}
+
+#panel .thead .active2 {
+  background-image: url('https://s1.ax1x.com/2018/03/18/9odjMt.png');
+}
+
+#panel .thead .flex-row.nobg {
+  background: none !important;
+}
+
+#panel .more {
+  background: url(https://s1.ax1x.com/2018/03/18/9o0P0K.png) 100rpx center no-repeat;
+  background-size: 30rpx 30rpx;
+  color: #be0001;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+view.flex-cell:nth-child(odd) {
+  background-color: #fef6f6;
+}
+
+.flex-cell {
+  flex: 1;
+}
+
+/* 侧滑 */
+
+.dlg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 100%;
+  top: 0;
+  transition: all 0.25s;
+}
+
+.dlg-active {
+  transform: rotate(0deg) scale(1) translate(-100%, 0%);
+}
+
+.dlg-mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dlg-content {
+  width: 540rpx;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 30rpx;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.card {
+  width: 100%;
+  background: #c9c9c9;
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.card .card-hd {
+  border-radius: 10rpx;
+  background: linear-gradient(180deg, #ee000a, #bc0004);
+  color: #fff;
+  font-size: 30rpx;
+  padding: 40rpx;
+  font-weight: 100;
+  box-sizing: border-box;
+}
+
+.card-tit {
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  text-indent: 60rpx;
+}
+
+.card  .info {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card  .info text {
+  width: 50%;
+  margin-top: 40rpx;
+}
+
+.card .info .unit {
+  font-size: 20rpx;
+}
+
+.card .card-bd {
+  overflow: hidden;
+}
+
+.card .card-bd .num-info {
+  margin: 30rpx;
+  font-size: 30rpx;
+}
+
+.card .card-bd .num {
+  font-size: 45rpx;
+  color: #b50007;
+  margin: 0 15rpx;
+  font-weight: 700;
+}
+
+.card .card-bd .tip {
+  color: #7a7a7a;
+  font-size: 20rpx;
+  margin: 30rpx;
+}
+
+.card .card-bd .img-content {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card .card-bd .image {
+  width: 180rpx;
+  height: 120rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 10rpx auto 20rpx;
+}
+
+.intro {
+  font-size: 24rpx;
+  text-align: center;
+  margin: 20rpx 0;
+  padding: 6rpx 0;
+  background-color: #f5e1be;
+  color: #b6925e;
+}
+
+.fm-book .section {
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx 0;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.fm-book .section:first-child {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.fm-book label {
+  color: #282828;
+  line-height: 1.5;
+  width: 200rpx;
+}
+
+.fm-book button {
+  background-color: #fb0008;
+  color: #fff;
+}
+
+.filter-content {
+  padding: 0;
+}
+
+.filter-content .tit {
+  color: #161616;
+  text-align: center;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 20rpx 0;
+}
+
+.filter-content .section .tit {
+  font-size: 30rpx;
+  border-bottom: 0;
+  margin-left: 20rpx;
+}
+
+.filter-content .section radio-group {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-left: 20rpx;
+}
+
+.filter-content radio-group label {
+  width: 44%;
+  margin: 15rpx 20rpx 15rpx 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 25rpx;
+  background: #d5d5d5;
+  color: #1b1b1b;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.filter-content radio-group label.active {
+  background: #db2131;
+  color: #fff;
+}
+
+.filter-content .opt-btn {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.filter-content .opt-btn button {
+  flex: 1;
+  border-radius: 0;
+  background: #db2131;
+  color: #fff;
+}
+
+.filter-content .opt-btn button:first-child {
+  background: #868686;
+}
+
+.filter-content .opt-btn button::after {
+  content: none;
+}
+
+.about {
+  background-color: #be0001;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 10rpx 15rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 0;
+}
+
+.connect-content .tit {
+  font-size: 35rpx;
+  padding-left: 20rpx;
+  border-left: 5rpx solid #be0001;
+}
+
+.connect-content .txt {
+  margin: 20rpx 0 10rpx 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.connect-content .connect-info {
+  margin: 20rpx 0;
+  border-top: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  padding: 30rpx 0;
+}
+
+.connect-content .connect-info text {
+  font-size: 25rpx;
+}
+
+.connect-content .connect-info .btn {
+  border-radius: 10rpx;
+  border: 1rpx solid #be0001;
+  margin: 20rpx 0;
+  color: #be0001;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  
+  padding: 0;
+  background-color: #fff
+}
+
+.connect-content .connect-info .btn text {
+  font-size: 30rpx;
+  text-align: center;
+  width: 100%;
+  line-height: 80rpx;
+}
+
+.connect-content .connect-info .btn>view {
+  background-color: #be0001;
+  width: 150rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-content .connect-info image {
+  width: 50rpx;
+  height: 50rpx;
+}

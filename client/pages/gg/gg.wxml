@@ -1,0 +1,9 @@
+<view class='list-content' wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+  <view class='item' bindtap='handleJmup' data-url="https://www.fjchjr.com/index/notice/read" data-id="{{item.id}}">
+    <image src="{{item.cover}}" wx:if="{{item.cover}}" class='img'></image>
+    <view class='info'>
+    <text class='tit'>{{item.title}}</text>
+    <text class='date'>{{item.created_at}}</text>
+    </view>
+  </view>
+</view>
